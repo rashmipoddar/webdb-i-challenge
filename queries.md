@@ -82,5 +82,5 @@ COUNT (DISTINCT city)
 
 ## (Stretch) Find all suppliers who have names longer than 20 characters. You can use `length(SupplierName)` to get the length of the name
 
-SELECT * FROM Suppliers WHERE length(SupplierName) > 10;
+SELECT * FROM Suppliers WHERE length(SupplierName) > 20;
 

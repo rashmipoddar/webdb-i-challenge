@@ -11,7 +11,10 @@ server.get('/', (req, res) => {
 });
 
 server.get('/accounts', (req, res) => {
-  db.select('*').from('accounts')
+  const { limit = 5, sortby = 'id', sortdir = 'asc' } = req.query;
+  // console.log(limit, sortby, sortdir);
+
+  db.select('*').from('accounts').orderBy(sortby, sortdir).limit(limit)
     .then(accounts => {
       // console.log(accounts);
       res.status(200).send(accounts);
